@@ -16,8 +16,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  
-  resultsForm!:FormGroup;
+
+  resultsForm!: FormGroup;
   results: any;
 
   questionLevels!: any[];
@@ -31,7 +31,7 @@ export class ResultsComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private _results: ResultsService,
-    private _route:ActivatedRoute,
+    private _route: ActivatedRoute,
     private _user: UserService,
     private _questionLevel: QuestionLevelService,
     private _snack: MatSnackBar
@@ -73,7 +73,7 @@ export class ResultsComponent implements OnInit {
 
       console.log(royxat);
       this.results = royxat.content;
-
+      console.log(this.results);
       this.length = royxat.totalElements;
     });
   }
