@@ -120,8 +120,7 @@ export class StartComponent implements OnInit {
       },
       attemptedQuestions: this.attempted,
       score: this.marksGot,
-      point: this.point,
-      date: new Date(),
+      point: this.point
     };
 
     this.isSubmit = true;

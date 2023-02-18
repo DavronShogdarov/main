@@ -15,7 +15,7 @@ export class ResultsService {
 
   // add result
   create(result: any): Observable<any> {
-    return this.http.post(this.api, result);
+    return this.http.post(this.api + "/save", result);
   }
 
   // update result

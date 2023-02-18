@@ -8,6 +8,8 @@ export interface Results {
   attemptedQuestions: number,
   date: Date,
   user: User,
+  name: string,
+  surname: string,
   questionLevel: QuestionLevel,
 }
 
