@@ -22,7 +22,7 @@ export class CategoryComponent implements OnInit {
   modalRef!: BsModalRef;
   surovBajarilmoqda = false;
 
-  displayedColumns: string[] = ['id', 'level', 'info', 'amal'];
+  displayedColumns: string[] = ['id', 'level', 'info', 'timer', 'amal'];
   dataSource: any;
   filter = new FormControl('filter')
 
@@ -47,7 +47,8 @@ export class CategoryComponent implements OnInit {
     this.questionLevelForm = this.fb.group({
       id: [],
       level: ['', Validators.required],
-      info: ['', Validators.required]
+      info: ['', Validators.required],
+      timer: ['', Validators.required]
     });
   }
 

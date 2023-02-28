@@ -10,6 +10,7 @@ import { Results } from 'src/app/model/results';
 import { QuestionLevel } from 'src/app/model/questionLevel';
 import Swal from 'sweetalert2';
 import { ThisReceiver } from '@angular/compiler';
+import { QuestionLevelService } from 'src/app/service/questionLevel.service';
 
 @Component({
   selector: 'app-start',
@@ -19,12 +20,12 @@ import { ThisReceiver } from '@angular/compiler';
 export class StartComponent implements OnInit {
 
   // propertys for time interval
-  counter = 10;
+  counter = 2;
   interval$: any;
 
   // propertys for statistics of the results
   marksGot = 0;
-  point = 0
+  point = 0;
   attempted = 0;
 
   // question's propertys
@@ -54,6 +55,12 @@ export class StartComponent implements OnInit {
     this.questionService.getTestsByGroup().subscribe((res: any) => {
       this.questionList = res;
       this.questionListLength = res.length;
+      console.log("keldi");
+      console.log(this.questionList);
+
+      this.counter = this.questionList[0].questionLevel.timer;
+      console.log(this.counter);
+
     });
   }
 
@@ -174,7 +181,7 @@ export class StartComponent implements OnInit {
 
   resetCounter() {
     this.stopCounter();
-    this.counter = 10;
+    this.counter = this.questionList[0].questionLevel.timer;
     this.startCounter();
   }
 

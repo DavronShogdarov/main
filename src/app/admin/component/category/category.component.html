@@ -41,6 +41,12 @@
                 <mat-label>Sarlavha</mat-label>
                 <textarea formControlName="info" matInput Info="Description..."></textarea>
               </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Timer</mat-label>
+                <textarea formControlName="timer" matInput Info="Timer..."></textarea>
+              </mat-form-field>
+
               <button [disabled]="questionLevelForm.invalid || surovBajarilmoqda" style="width: 400px; margin: auto;"
                 mat-stroked-button type="submit">
                 <mat-spinner *ngIf="surovBajarilmoqda" diameter="20" color="warn"></mat-spinner>
@@ -63,6 +69,7 @@
           <th>#</th>
           <th>Matn</th>
           <th>Sarlavha</th>
+          <th>Timer</th>
           <th></th>
         </tr>
       </thead>
@@ -71,6 +78,7 @@
           <td>{{l?.id}}</td>
           <td>{{l?.level}}</td>
           <td>{{l?.info}}</td>
+          <td>{{l?.timer}}</td>
           <td>
             <button mat-mini-fab color="warn" mat-button (click)="ochirish(l)">
               <mat-icon class="mat-18">delete</mat-icon>
